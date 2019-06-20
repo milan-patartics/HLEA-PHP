@@ -31,8 +31,8 @@ The complexity of the - cryptographically secure, non-seeded random - encryption
 the default key settings, there are `256! x 256^306004 x 256! x 65536! x 65536^239954 x 65536!` possible 
 versions!
 
-HLEA algorithm has a linear runtime, so the required time to process the encryption/decryption is 
-directly proportional to the size of the data.
+HLEA has a linear runtime, so the required time to process the encryption/decryption is directly 
+proportional to the size of the data.
 
 ## Explanation
 HLEA is using a byte based encryption algorithm and it processes bytes in pairs. For easy understanding, 
@@ -66,10 +66,10 @@ The secondary uint16 swap table is similar to the primary uint16 swap table, it 
 but it stores all possible - unsigned - 16 bit integer values in a different random order.
 
 ### Algorithm
-The HLEA algorithm uses six steps to process the data - both for encrypting and decrypting.
+The HLEA uses six steps to process the data - both for encrypting and decrypting.
 
 #### Encryption Process
-Because the HLEA algorithm processes byte pairs, if the input data has odd number of bytes, a new - 
+Because the HLEA processes byte pairs, if the input data has odd number of bytes, a new - 
 cryptographically secure pseudo-random - byte is appended to the end of the original data before 
 applying the encryption. When this happens, the algorithm returns a flag about this. This flag is used 
 in the decryption process to drop that last random byte after decrypting the data.
@@ -181,9 +181,9 @@ After this last step the algorithm finished the decryption process of the given 
 ## PHP Implementation
 This PHP implementation of HLEA is written in PHP 7, without using any third-party solutions.
 
-However it is a fully featured, working version of the HLEA algorithm, it's main goal is to provide a 
-platform independent, well documented and easy to understand source code, that can be run on most 
-computer platforms without installing any complex runtime environments or compilers.
+However it is a fully featured, working version of the HLEA, it's main goal is to provide a platform 
+independent, well documented and easy to understand source code, that can be run on most computer 
+platforms without installing any complex runtime environments or compilers.
 
 Because of this reasons, this solution is much slower than it could be. It is not optimized for 
 performance, but to provide a base and research material for further developments.
